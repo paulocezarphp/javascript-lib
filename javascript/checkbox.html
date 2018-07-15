@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <title>HTML titulo</title>
+  <body>
+
+    Lampada <input type="checkbox" id="lampada"><br>
+
+    <div id="resultado">...</div><br>
+
+    <span onclick="Evento()">Aperte aqui</span><br>
+
+    <button onclick="Trocar()">Trocar e ativar!</button>
+
+
+    <script>
+      var lampada = document.getElementById('lampada');
+      lampada.checked = false;
+
+      function Evento(){
+        if(lampada.checked == true){
+          document.getElementById('resultado').innerHTML = 'Lampada ligada!';
+        }else{
+          document.getElementById('resultado').innerHTML = 'Lampada desligada!';
+        }
+      }
+
+      var estado = false;
+
+      function Trocar(){
+        if(estado == true){
+           lampada.checked = false;
+           estado = false;
+        }else{
+          lampada.checked = true;
+          estado = true;
+        }
+      }
+
+    </script>
+
+  </body>
+</html>
