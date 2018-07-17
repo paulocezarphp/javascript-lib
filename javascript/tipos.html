@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <title>HTML titulo</title>
+  <body>
+
+  <script>
+
+
+
+    function QualTipo(tipo){
+      if(typeof tipo == 'string' ){
+        document.write('E uma string');
+      }
+
+      if(typeof tipo == 'number' ){
+        document.write('E uma numero')
+      }
+
+      if(typeof tipo == 'object'){
+        document.write('E uma objeto')
+      }
+    }
+
+    var array = ['a','b','c']
+    QualTipo(array);
+
+  </script>
+
+  </body>
+</html>
