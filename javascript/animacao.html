@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Criando animação</title>
+    <meta charset="UTF-8">
+
+    <style>
+
+      #janela{
+          width: 500px;
+          height: 400px;
+          background: #333;
+          position: relative;;
+      }
+
+      #objeto{
+        width: 50px;
+        height: 50px;
+        position: absolute;;
+        left: 5px;
+        top: 5px;
+        background: #0099ff;
+        border-radius: 50px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+
+
+    <button onclick="Animar()" id="botao">Aperte aqui!</button>
+
+    <div id="janela">
+      <div id="objeto"></div>
+    </div>
+
+
+    <script>
+	
+	/*
+		Criamos 2 objetos um com um id chamado janela e outro chamado objeto
+		O elemento com o id chamado (janela) vai conter o objeto que vai se mover,
+		já o elemento com id (objeto) é o objeto que vai se mover.
+	*/
+
+	/*
+		Chama a animação
+	*/
+    function Animar(){
+      var elemento = document.getElementById('objeto');
+      var posicao = 0; // 0 -> posição inicial
+      var tempo = setInterval(Quadro, 5); // 5 -> velocidade da animação
+
+      function Quadro(){
+        if(posicao == 350){
+          clearInterval(tempo);
+          elemento.style.width = '100%';
+          elemento.style.left = '0px';
+          elemento.style.borderRadius = '0px';
+        } else{
+          posicao++;
+          elemento.style.top = posicao + 'px';
+        }
+      }
+    }  
+
+    </script>
+
+
+  </body>
+</html>
