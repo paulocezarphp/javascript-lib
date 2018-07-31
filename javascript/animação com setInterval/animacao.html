@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Criando animação</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+
+    <img src="img/1.png" id="anima">
+    <button onclick='Animacao("img/1.png","img/2.png","img/3.png","img/4.png","img/5.png","img/6.png","img/7.png","img/8.png","img/9.png","img/10.png","img/11.png","img/12.png","img/13.png","img/14.png","img/15.png")'>Aperte aqui</button>
+
+    <script>
+      function Animacao(...vetor){
+
+        var frame = 0;
+        var velocidade = 10;
+        var total = vetor.length;
+
+        function animaStart(){
+          var temporizador = setInterval(Anima, velocidade * 10);
+        }
+
+        function Anima(){
+          if(frame < total){
+            document.getElementById('anima').src= vetor[frame];
+            frame++;
+          }else{
+
+          }
+        }
+
+        animaStart();
+        Anima();
+
+      }
+
+      Animacao("img/1.png","img/2.png","img/3.png","img/4.png","img/5.png","img/6.png","img/7.png","img/8.png","img/9.png","img/10.png","img/11.png","img/12.png","img/13.png","img/14.png","img/15.png");
+
+    </script>
+
+  </body>
+</html>
